@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Bienvenido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding login-background">
+  <div class="login-container">
+    <h1 class="login-title">Inicia Sesión</h1>
+    <form (ngSubmit)="onLogin()" class="login-form">
+      <ion-item class="custom-item">
+        <ion-icon name="person-outline" slot="start" color="primary"></ion-icon>
+        <ion-label position="floating" color="primary">Usuario</ion-label>
+        <ion-input type="text" [(ngModel)]="username" name="username" required></ion-input>
+      </ion-item>
+      
+      <ion-item class="custom-item">
+        <ion-icon name="lock-closed-outline" slot="start" color="primary"></ion-icon>
+        <ion-label position="floating" color="primary">Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+      </ion-item>
+      
+
+      <ion-button expand="block" type="submit" class="custom-button">
+        Conectarse
+      </ion-button>
+    </form>
+
+    <p class="login-footer">¿Olvidaste tu contraseña? <a href="#">Recupérala aquí</a></p>
+  </div>
+</ion-content>
+
+

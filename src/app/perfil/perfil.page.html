@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="!selectedUser">
+    <ion-list>
+      <ion-list-header>
+        <ion-label>Seleccione un usuario</ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let usuario of usuarios$ | async" (click)="selectUser(usuario)">
+        <ion-label>
+          {{ usuario.nombre }} {{ usuario.apellido }}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div *ngIf="selectedUser">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Perfil del Usuario</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="stacked">Nombre</ion-label>
+          <ion-input [(ngModel)]="selectedUser.nombre" readonly></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Rol</ion-label>
+          <ion-input [(ngModel)]="selectedUser.apellido" readonly></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input [(ngModel)]="selectedUser.email" readonly></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Contraseña</ion-label>
+          <ion-input [(ngModel)]="selectedUser.password" type="password" readonly></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Estado</ion-label>
+          <ion-select [(ngModel)]="selectedUser.estado">
+            <ion-select-option value="activo">Activo</ion-select-option>
+            <ion-select-option value="inactivo">Inactivo</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <div class="ion-padding">
+      <ion-button expand="block" color="primary" (click)="saveChanges()">
+        Guardar Cambios
+      </ion-button>
+      <ion-button expand="block" color="secondary" (click)="deselectUser()">
+        Volver a la Lista
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
+

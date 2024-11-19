@@ -11,6 +11,35 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'usuarios',
+    loadChildren: () => import('./usuarios/usuarios.module').then( m => m.UsuariosPageModule)
+  },
+  {
+    path: 'add-usuario',
+    loadChildren: () => import('./add-usuario/add-usuario.module').then( m => m.AddUsuarioPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  { path: '', redirectTo: 'login', pathMatch: 'full' 
+
+  },
+  { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
+
+   },
+  { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomePageModule) 
+    
+  },
+  {
+    path: 'roles',
+    loadChildren: () => import('./roles/roles.module').then( m => m.RolesPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  }
 ];
 
 @NgModule({
@@ -20,3 +49,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

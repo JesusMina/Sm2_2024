@@ -1,0 +1,61 @@
+/* Fondo de la página */
+.login-background {
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Esto garantiza que ocupe toda la altura de la pantalla */
+  }
+  
+  /* Contenedor principal del login */
+  .login-container {
+    margin: auto;
+    margin-top: 100px;
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    position: relative; /* Asegura que el contenedor no se salga de la pantalla */
+  }
+  
+  /* Título del login */
+  .login-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #4e54c8;
+  }
+  
+  /* Estilo para los elementos del formulario */
+  .custom-item {
+    margin-bottom: 1rem;
+    --background: transparent;
+    --border-radius: 0.5rem;
+  }
+  
+  /* Botón personalizado */
+  .custom-button {
+    --background: #4e54c8;
+    --background-hover: #3e44a8;
+    --border-radius: 0.5rem;
+    font-size: 1.1rem;
+    color: white;
+  }
+  
+  /* Pie de página del formulario */
+  .login-footer {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .login-footer a {
+    color: #4e54c8;
+    text-decoration: none;
+  }
+  
+
+  
+  

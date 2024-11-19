@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- Botón de cerrar al lado izquierdo en modo edición -->
+      <ion-button *ngIf="isEditMode" (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+      <!-- Botón de retroceso cuando no estamos en modo edición -->
+      <ion-back-button *ngIf="!isEditMode" defaultHref="usuarios"></ion-back-button>
+    </ion-buttons>
+    
+    <ion-title>{{isEditMode ? 'actualizar' : 'agregar'}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]='form'>
+    <ion-item>
+      <ion-label position='floating'>Nombre</ion-label>
+      <ion-input formControlName='nombre'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position='floating'>Rol</ion-label>
+      <ion-input formControlName='apellido'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position='floating'>Email</ion-label>
+      <ion-input formControlName='email'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position='floating'>Contraseña</ion-label>
+      <ion-input formControlName='password'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position='floating'>ImagenURL</ion-label>
+      <ion-input formControlName='imageUrl'></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="submitUsuario()" [disabled]="form.invalid">
+      {{isEditMode ? 'Actulizar' : 'Guardar'}} Usuario
+    </ion-button>
+  </form>
+</ion-content>
+
+
+
+ 

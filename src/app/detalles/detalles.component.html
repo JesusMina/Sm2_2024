@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{usuario.nombre}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="start" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img [src]="usuario.imageUrl" alt="">
+  <div class="ion-padding">
+    <ion-text>
+      <h1>{{usuario.nombre}}</h1>
+      <h1>{{usuario.apellido}}</h1>
+      <p class="ion-margin-vertical">{{usuario.email}}</p>
+    </ion-text>
+
+    <ion-button expand="block" (click)="openeditModal()">actualizar</ion-button>
+    <ion-button expand="block" color="danger" (click)="onDeleteUsuario()">Eliminar</ion-button>
+
+  </div>
+</ion-content>

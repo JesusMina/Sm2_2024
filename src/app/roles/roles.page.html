@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- Botón de regresar -->
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Gestión de Roles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Botón para agregar rol -->
+  <ion-button expand="block" color="success" (click)="addRole()">
+    <ion-icon slot="start" name="add-circle"></ion-icon>
+    Agregar Rol
+  </ion-button>
+
+  <!-- Lista de roles -->
+  <ion-list>
+    <ion-item *ngFor="let role of roles" lines="full">
+      <ion-label>{{ role }}</ion-label>
+      <ion-buttons slot="end">
+        <!-- Botón para editar -->
+        <ion-button color="primary" (click)="editRole(role)">
+          <ion-icon name="pencil"></ion-icon>
+        </ion-button>
+        <!-- Botón para eliminar -->
+        <ion-button color="danger" (click)="deleteRole(role)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
+
+
